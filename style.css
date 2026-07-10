@@ -37,9 +37,9 @@ button{
 
 button:hover{
     background:#e6395a;
-}
-.credit{
+    .credit{
     margin-top:20px;
-    font-size:14px;
     color:#777;
-}
+    font-size:15px;
+    text-align:center;
+    }
