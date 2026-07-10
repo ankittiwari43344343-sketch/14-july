@@ -35,11 +35,9 @@ button{
     font-size:18px;
 }
 
-button:hover{
-    background:#e6395a;
-    .credit{
-    margin-top:20px;
+.credit{
+    font-size:14px;
     color:#777;
-    font-size:15px;
+    margin-bottom:15px;
     text-align:center;
-    }
+}
