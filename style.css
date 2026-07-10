@@ -38,3 +38,8 @@ button{
 button:hover{
     background:#e6395a;
 }
+.credit{
+    margin-top:20px;
+    font-size:14px;
+    color:#777;
+}
