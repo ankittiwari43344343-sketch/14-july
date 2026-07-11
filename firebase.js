@@ -53,3 +53,4 @@ if (loginBtn) {
 alert("firebase.js loaded");
 signInWithEmailAndPassword(auth, email, password)
       });
+const loginBtn = document.getElementById("loginBtn");
