@@ -43,7 +43,7 @@ if (loginBtn) {
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
         alert("Login successful!");
-        window.location.href = "index.html";
+        window.location.href = "profile.html";
       })
       .catch((error) => {
         alert(error.message);
