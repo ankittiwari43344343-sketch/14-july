@@ -33,10 +33,15 @@ if (signupBtn) {
 }
 
 // Login
+);
 const loginBtn = document.getElementById("loginBtn");
 
 if (loginBtn) {
+  alert("Login button found!");
+
   loginBtn.addEventListener("click", () => {
+    alert("Login button clicked!");
+
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
@@ -46,11 +51,7 @@ if (loginBtn) {
         window.location.href = "profile.html";
       })
       .catch((error) => {
-        alert(error.message);
+        alert(error.code + "\n" + error.message);
       });
   });
 }
-alert("firebase.js loaded");
-signInWithEmailAndPassword(auth, email, password)
-      });
-const loginBtn = document.getElementById("loginBtn");
