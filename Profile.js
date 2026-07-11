@@ -4,4 +4,5 @@ document.getElementById("saveBtn").addEventListener("click", () => {
 
 document.getElementById("logoutBtn").addEventListener("click", () => {
     alert("Logged out!");
-    window.location.href = "profile.html";
+    window.location.href = "login.html";
+});
