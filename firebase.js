@@ -50,3 +50,4 @@ if (loginBtn) {
       });
   });
 }
+alert("firebase.js loaded");
