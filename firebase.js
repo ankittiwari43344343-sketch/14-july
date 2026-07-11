@@ -15,3 +15,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+document.getElementById("signupBtn").addEventListener("click", () => {
+    alert("Button clicked!");
+});
