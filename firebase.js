@@ -51,3 +51,5 @@ if (loginBtn) {
   });
 }
 alert("firebase.js loaded");
+signInWithEmailAndPassword(auth, email, password)
+      });
