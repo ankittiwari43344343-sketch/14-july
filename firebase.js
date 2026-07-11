@@ -42,9 +42,9 @@ if (loginBtn) {
 
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        alert("Login successful!");
-        window.location.href = "index.html";
-      })
+    alert("Login successful!");
+    window.location.href = "dashboard.html";
+})
       .catch((error) => {
         alert(error.message);
       });
