@@ -1,9 +1,6 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAkMzgmF8NRPdX0weTJ1yqo2HIUSil2OQ0",
   authDomain: "july-f8b7b.firebaseapp.com",
@@ -13,11 +10,43 @@ const firebaseConfig = {
   appId: "1:680464782562:web:e35746ae4a958d58be7abb"
 };
 
-// Initialize Firebase
-const btn = document.getElementById("signupBtn");
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-console.log(btn);
+// Sign Up
+const signupBtn = document.getElementById("signupBtn");
 
-btn.addEventListener("click", () => {
-    alert("Button clicked!");
-});
+if (signupBtn) {
+  signupBtn.addEventListener("click", () => {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        alert("Account created successfully!");
+        window.location.href = "login.html";
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  });
+}
+
+// Login
+const loginBtn = document.getElementById("loginBtn");
+
+if (loginBtn) {
+  loginBtn.addEventListener("click", () => {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        alert("Login successful!");
+        window.location.href = "index.html";
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  });
+}
