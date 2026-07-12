@@ -251,3 +251,39 @@ font-size:28px;
 }
 
 }
+.today-birthday{
+padding:80px 20px;
+text-align:center;
+background:#eef5ff;
+}
+
+.today-birthday h2{
+font-size:36px;
+color:#1565c0;
+margin-bottom:40px;
+}
+
+.birthday-card{
+max-width:400px;
+margin:auto;
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.birthday-card img{
+width:80px;
+height:80px;
+border-radius:50%;
+margin-bottom:20px;
+}
+
+.birthday-card h3{
+margin-bottom:10px;
+color:#1565c0;
+}
+
+.birthday-card p{
+margin-bottom:20px;
+}
