@@ -1,16 +1,53 @@
-const wishes = [
-"🎉 Happy Birthday! Wishing you happiness, good health and endless success.",
-"❤️ Happy Birthday! Remember, today you are loved and celebrated by the 14 July community.",
-"🌸 May your birthday be filled with joy, laughter and unforgettable memories.",
-"🎂 Wishing you a wonderful year full of dreams, achievements and happiness.",
-"🌍 Happy Birthday! You are never alone. People around the world celebrate with you today.",
-"✨ Every birthday is a new beginning. Keep smiling and keep believing in yourself.",
-"💙 May your heart be filled with hope, peace and endless happiness. Happy Birthday!",
-"🎈 Another year, another chance to make beautiful memories. Have an amazing birthday!",
-"🥳 Today is your day! Smile, celebrate and enjoy every moment. Happy Birthday!",
-"🎁 From everyone at 14 July: Happy Birthday! We wish you love, success and a beautiful future."
-];
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
 
-const randomWish = wishes[Math.floor(Math.random() * wishes.length)];
+const firebaseConfig = {
+  apiKey: "AIzaSyAkMzgmF8NRPdX0weTJ1yqo2HIUSil2OQ0",
+  authDomain: "july-f8b7b.firebaseapp.com",
+  databaseURL: "https://july-f8b7b-default-rtdb.firebaseio.com",
+  projectId: "july-f8b7b",
+  storageBucket: "july-f8b7b.firebasestorage.app",
+  messagingSenderId: "680464782562",
+  appId: "1:680464782562:web:e35746ae4a958d58be7abb"
+};
 
-document.getElementById("birthdayWish").innerText = randomWish;
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getDatabase(app);
+
+onAuthStateChanged(auth, (user) => {
+
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+
+  document.getElementById("sendBtn").addEventListener("click", () => {
+
+    const receiver = document.getElementById("receiver").value;
+    const message = document.getElementById("wish").value;
+
+    if (receiver === "" || message === "") {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    push(ref(db, "wishes"), {
+      from: user.email,
+      to: receiver,
+      message: message,
+      time: new Date().toLocaleString()
+    })
+    .then(() => {
+      alert("🎉 Birthday wish sent successfully!");
+      document.getElementById("receiver").value = "";
+      document.getElementById("wish").value = "";
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
+
+  });
+
+});
