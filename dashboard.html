@@ -6,55 +6,148 @@
 <title>Dashboard - 14 July</title>
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
 body{
-    font-family:Arial,sans-serif;
-    background:#f4f8ff;
-    margin:0;
+background:#f5f9ff;
 }
 
 header{
-    background:#1565c0;
-    color:white;
-    padding:20px;
-    text-align:center;
+background:#1565c0;
+color:white;
+padding:20px;
+text-align:center;
+font-size:28px;
+font-weight:bold;
 }
 
 .container{
-    max-width:800px;
-    margin:40px auto;
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-    text-align:center;
+max-width:900px;
+margin:40px auto;
+padding:20px;
 }
 
-button{
-    padding:12px 25px;
-    background:#1565c0;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    margin-top:20px;
+h2{
+text-align:center;
+color:#1565c0;
+margin-bottom:30px;
+}
+
+.card{
+background:white;
+border-radius:18px;
+padding:20px;
+margin-bottom:20px;
+box-shadow:0 8px 20px rgba(0,0,0,.1);
+display:flex;
+justify-content:space-between;
+align-items:center;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+}
+
+.left h3{
+color:#1565c0;
+margin-bottom:8px;
+}
+
+.left p{
+color:#666;
+}
+
+a{
+text-decoration:none;
+}
+
+.go{
+background:#1565c0;
+color:white;
+padding:10px 18px;
+border-radius:10px;
+font-weight:bold;
+}
+
+footer{
+text-align:center;
+margin:40px;
+color:#777;
 }
 </style>
+
 </head>
 <body>
 
 <header>
-    <h1>🎂 14 July</h1>
+🎂 14 July
 </header>
 
 <div class="container">
-    <h2>Welcome!</h2>
-    <p>You have successfully logged in.</p>
-    <p>❤️ No one celebrates alone ❤️</p>
 
-    <button onclick="window.location.href='index.html'">
-        Go to Home
-    </button>
+<h2>Welcome 👋</h2>
+
+<a href="profile.html">
+<div class="card">
+<div class="left">
+<h3>👤 User Profile</h3>
+<p>View and edit your profile.</p>
 </div>
+<div class="go">Open →</div>
+</div>
+</a>
+
+<a href="birthdays.html">
+<div class="card">
+<div class="left">
+<h3>🎂 Today's Birthdays</h3>
+<p>See today's birthdays.</p>
+</div>
+<div class="go">Open →</div>
+</div>
+</a>
+
+<a href="wishes.html">
+<div class="card">
+<div class="left">
+<h3>💌 Birthday Wishes</h3>
+<p>Send birthday wishes.</p>
+</div>
+<div class="go">Open →</div>
+</div>
+</a>
+
+<a href="search.html">
+<div class="card">
+<div class="left">
+<h3>🔍 Search People</h3>
+<p>Find other members.</p>
+</div>
+<div class="go">Open →</div>
+</div>
+</a>
+
+<a href="settings.html">
+<div class="card">
+<div class="left">
+<h3>⚙️ Settings</h3>
+<p>Account settings and logout.</p>
+</div>
+<div class="go">Open →</div>
+</div>
+</a>
+
+</div>
+
+<footer>
+© 2026 14 July • Founded by Ankit Tiwari
+</footer>
 
 </body>
 </html>
