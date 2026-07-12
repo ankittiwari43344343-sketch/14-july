@@ -20,7 +20,7 @@ background:#f4f8ff;
 header{
 background:#1565c0;
 color:white;
-padding:18px;
+padding:20px;
 text-align:center;
 font-size:28px;
 font-weight:bold;
@@ -32,7 +32,7 @@ margin:40px auto;
 background:white;
 padding:30px;
 border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.1);
+box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
 
 .profile-pic{
@@ -59,10 +59,10 @@ margin-bottom:20px;
 }
 
 label{
-font-weight:bold;
 display:block;
 margin-top:15px;
-margin-bottom:6px;
+margin-bottom:5px;
+font-weight:bold;
 }
 
 input,textarea{
@@ -74,14 +74,14 @@ font-size:16px;
 }
 
 textarea{
-resize:none;
 height:90px;
+resize:none;
 }
 
 button{
 width:100%;
-margin-top:25px;
 padding:14px;
+margin-top:25px;
 background:#1565c0;
 color:white;
 border:none;
@@ -96,15 +96,22 @@ background:#0d47a1;
 
 .back{
 display:block;
-text-align:center;
 margin-top:20px;
+text-align:center;
 text-decoration:none;
 color:#1565c0;
 font-weight:bold;
 }
+
+@media(max-width:600px){
+.container{
+margin:20px;
+}
+}
 </style>
 
 </head>
+
 <body>
 
 <header>
@@ -117,30 +124,41 @@ font-weight:bold;
 
 <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" id="preview">
 
-<br>
+<br><br>
 
 <input type="file" id="photo">
 
 </div>
 
-<h2>Edit Profile</h2>
+<h2>Edit Your Profile</h2>
 
 <label>Full Name</label>
-<input type="text" placeholder="Enter your name">
+<input
+type="text"
+id="name"
+placeholder="Enter your full name">
 
 <label>Date of Birth</label>
-<input type="date">
+<input
+type="date"
+id="dob">
 
 <label>Bio</label>
-<textarea placeholder="Tell people something about yourself..."></textarea>
+<textarea
+id="bio"
+placeholder="Tell people about yourself"></textarea>
 
-<button>Save Profile</button>
+<button id="saveBtn">
+💾 Save Profile
+</button>
 
 <a href="dashboard.html" class="back">
 ⬅ Back to Dashboard
 </a>
 
 </div>
+
+<script type="module" src="profile.js"></script>
 
 </body>
 </html>
