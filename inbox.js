@@ -25,7 +25,7 @@ onAuthStateChanged(auth, (user) => {
 
   const messages = document.getElementById("messages");
 
-  get(ref(db, "wishes/" + user.uid)).then((snapshot) => {
+  get(ref(db, "wishes")).then((snapshot) => {
 
     messages.innerHTML = "";
 
@@ -34,18 +34,31 @@ onAuthStateChanged(auth, (user) => {
       return;
     }
 
+    let found = false;
+
     snapshot.forEach((child) => {
 
       const wish = child.val();
 
-      messages.innerHTML += `
-        <div class="message">
-          <div class="sender">🎉 ${wish.from}</div>
-          <div class="text">${wish.message}</div>
-        </div>
-      `;
+      if (wish.to === user.email) {
+
+        found = true;
+
+        messages.innerHTML += `
+          <div class="message">
+            <div class="sender">From: ${wish.from}</div>
+            <div class="text">${wish.message}</div>
+            <div class="date">${wish.time}</div>
+          </div>
+        `;
+
+      }
 
     });
+
+    if (!found) {
+      messages.innerHTML = "<h3>No birthday wishes yet ❤️</h3>";
+    }
 
   });
 
