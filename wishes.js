@@ -32,7 +32,7 @@ onAuthStateChanged(auth, (user) => {
       alert("Please fill in all fields.");
       return;
     }
-
+alert("wishes.js loaded");
     push(ref(db, "wishes"), {
       from: user.email,
       to: receiver,
