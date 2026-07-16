@@ -52,3 +52,6 @@ alert("wishes.js loaded");
   });
 
 });
+<script type="module" src="wishes.js"></script>
+</body>
+</html>
