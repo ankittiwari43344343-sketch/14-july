@@ -17,24 +17,52 @@ body{
 background:#f4f8ff;
 }
 
-header{
+/* Navigation */
+
+.navbar{
 background:#1565c0;
-color:white;
-padding:20px;
-text-align:center;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 30px;
+flex-wrap:wrap;
+}
+
+.logo{
 font-size:28px;
 font-weight:bold;
+color:white;
+}
+
+nav{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:bold;
+padding:10px 15px;
+border-radius:10px;
+transition:.3s;
+}
+
+nav a:hover{
+background:white;
+color:#1565c0;
 }
 
 .container{
-max-width:900px;
+max-width:1000px;
 margin:35px auto;
 padding:20px;
 }
 
 .welcome{
 background:white;
-padding:25px;
+padding:30px;
 border-radius:20px;
 box-shadow:0 8px 20px rgba(0,0,0,.08);
 text-align:center;
@@ -44,6 +72,11 @@ margin-bottom:30px;
 .welcome h2{
 color:#1565c0;
 margin-bottom:10px;
+}
+
+.welcome p{
+color:#666;
+font-size:18px;
 }
 
 .grid{
@@ -64,7 +97,8 @@ transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-5px);
+transform:translateY(-6px);
+box-shadow:0 15px 30px rgba(0,0,0,.15);
 }
 
 .icon{
@@ -79,6 +113,27 @@ margin-bottom:10px;
 
 .card p{
 color:#666;
+line-height:1.5;
+}
+
+.footer{
+text-align:center;
+padding:30px;
+color:#777;
+font-size:15px;
+}
+
+@media(max-width:768px){
+
+.navbar{
+flex-direction:column;
+gap:15px;
+}
+
+nav{
+justify-content:center;
+}
+
 }
 </style>
 
@@ -86,8 +141,21 @@ color:#666;
 
 <body>
 
-<header>
-🎂 14 July Dashboard
+<header class="navbar">
+
+<div class="logo">
+🎂 14 July
+</div>
+
+<nav>
+<a href="dashboard.html">🏠 Home</a>
+<a href="profile.html">👤 Profile</a>
+<a href="wishes.html">💌 Send Wish</a>
+<a href="inbox.html">📥 Inbox</a>
+<a href="birthdays.html">🎂 Birthdays</a>
+<a href="settings.html">⚙️ Settings</a>
+</nav>
+
 </header>
 
 <div class="container">
@@ -102,35 +170,39 @@ color:#666;
 <a class="card" href="profile.html">
 <div class="icon">👤</div>
 <h3>My Profile</h3>
-<p>Edit your profile</p>
+<p>Edit your personal information and birthday.</p>
 </a>
 
 <a class="card" href="birthdays.html">
 <div class="icon">🎂</div>
 <h3>Today's Birthdays</h3>
-<p>See who celebrates today</p>
+<p>Discover who is celebrating today.</p>
 </a>
 
 <a class="card" href="wishes.html">
 <div class="icon">💌</div>
-<h3>Send Wish</h3>
-<p>Send birthday wishes</p>
+<h3>Send Birthday Wish</h3>
+<p>Send kind wishes to friends and family.</p>
 </a>
 
 <a class="card" href="inbox.html">
 <div class="icon">📥</div>
 <h3>Inbox</h3>
-<p>Read received wishes</p>
+<p>Read all the birthday wishes you've received.</p>
 </a>
 
 <a class="card" href="settings.html">
 <div class="icon">⚙️</div>
 <h3>Settings</h3>
-<p>Manage account</p>
+<p>Manage your account preferences.</p>
 </a>
 
 </div>
 
+</div>
+
+<div class="footer">
+❤️ No One Celebrates Alone • Created by Ankit Tiwari
 </div>
 
 </body>
