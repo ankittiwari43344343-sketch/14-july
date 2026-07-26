@@ -6,6 +6,7 @@
 <title>My Profile | 14 July</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -14,89 +15,114 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:#f4f8ff;
+background:#eef5ff;
 }
 
 header{
 background:#1565c0;
 color:white;
-padding:20px;
+padding:18px;
 text-align:center;
 font-size:28px;
 font-weight:bold;
 }
 
 .container{
-max-width:500px;
+max-width:550px;
 margin:40px auto;
 background:white;
 padding:30px;
 border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.15);
+box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
-.profile-pic{
+.profile{
 text-align:center;
 margin-bottom:25px;
 }
 
-.profile-pic img{
-width:120px;
-height:120px;
+.profile img{
+width:130px;
+height:130px;
 border-radius:50%;
-border:4px solid #1565c0;
+border:5px solid #1565c0;
 object-fit:cover;
 }
 
-.profile-pic input{
+.profile input{
 margin-top:15px;
 }
 
 h2{
 text-align:center;
 color:#1565c0;
-margin-bottom:20px;
+margin-bottom:25px;
 }
 
 label{
 display:block;
-margin-top:15px;
-margin-bottom:5px;
 font-weight:bold;
+margin-top:15px;
+margin-bottom:8px;
+color:#333;
 }
 
 input,textarea{
 width:100%;
-padding:12px;
+padding:14px;
 border:1px solid #ccc;
-border-radius:10px;
+border-radius:12px;
 font-size:16px;
+outline:none;
+}
+
+input:focus,
+textarea:focus{
+border-color:#1565c0;
 }
 
 textarea{
-height:90px;
+height:100px;
 resize:none;
+}
+
+#userid{
+background:#f2f7ff;
+color:#1565c0;
+font-weight:bold;
+letter-spacing:1px;
 }
 
 button{
 width:100%;
-padding:14px;
+padding:15px;
 margin-top:25px;
 background:#1565c0;
 color:white;
 border:none;
-border-radius:10px;
+border-radius:12px;
 font-size:18px;
 cursor:pointer;
+transition:.3s;
 }
 
 button:hover{
 background:#0d47a1;
 }
 
+.info{
+margin-top:25px;
+background:#f7fbff;
+padding:18px;
+border-left:5px solid #1565c0;
+border-radius:10px;
+font-size:15px;
+color:#555;
+}
+
 .back{
 display:block;
-margin-top:20px;
+margin-top:25px;
 text-align:center;
 text-decoration:none;
 color:#1565c0;
@@ -104,10 +130,18 @@ font-weight:bold;
 }
 
 @media(max-width:600px){
+
 .container{
 margin:20px;
+padding:20px;
 }
+
+header{
+font-size:24px;
 }
+
+}
+
 </style>
 
 </head>
@@ -120,11 +154,11 @@ margin:20px;
 
 <div class="container">
 
-<div class="profile-pic">
+<div class="profile">
 
 <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" id="preview">
 
-<br><br>
+<br>
 
 <input type="file" id="photo">
 
@@ -138,6 +172,19 @@ type="text"
 id="name"
 placeholder="Enter your full name">
 
+<label>Username</label>
+<input
+type="text"
+id="username"
+placeholder="@ankit">
+
+<label>User ID</label>
+<input
+type="text"
+id="userid"
+readonly
+placeholder="14J000001">
+
 <label>Date of Birth</label>
 <input
 type="date"
@@ -146,11 +193,21 @@ id="dob">
 <label>Bio</label>
 <textarea
 id="bio"
-placeholder="Tell people about yourself"></textarea>
+placeholder="Tell everyone something about yourself..."></textarea>
 
 <button id="saveBtn">
 💾 Save Profile
 </button>
+
+<div class="info">
+
+<b>🌟 Your Public Profile</b>
+
+<br><br>
+
+People can find you using your <b>Username</b>, <b>User ID</b>, or by scanning your future QR Code.
+
+</div>
 
 <a href="dashboard.html" class="back">
 ⬅ Back to Dashboard
