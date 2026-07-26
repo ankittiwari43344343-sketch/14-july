@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/fireba
 import { getDatabase, ref, get } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
+  apiKey: "AIzaSyAkMzgmF8NRPdX0weTJ1yqo2HIUSil2OQ0",
   authDomain: "july-f8b7b.firebaseapp.com",
   databaseURL: "https://july-f8b7b-default-rtdb.firebaseio.com",
   projectId: "july-f8b7b",
@@ -14,16 +14,18 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-const input = document.getElementById("searchInput");
+const searchInput = document.getElementById("searchInput");
 const results = document.getElementById("results");
 
-input.addEventListener("input", () => {
+searchInput.addEventListener("input", searchUsers);
 
-const text = input.value.toLowerCase().trim();
+function searchUsers() {
+
+const search = searchInput.value.toLowerCase().trim();
 
 results.innerHTML = "";
 
-if(text=="") return;
+if(search === "") return;
 
 get(ref(db,"users")).then((snapshot)=>{
 
@@ -33,11 +35,18 @@ const user = child.val();
 
 const username = (user.username || "").toLowerCase();
 const userid = (user.userid || "").toLowerCase();
+const name = (user.name || "").toLowerCase();
 
-if(username.includes(text) || userid.includes(text)){
+if(
+username.includes(search) ||
+userid.includes(search) ||
+name.includes(search)
+){
 
 results.innerHTML += `
 <div class="card">
+
+<div class="icon">👤</div>
 
 <h3>${user.name}</h3>
 
@@ -56,6 +65,10 @@ results.innerHTML += `
 
 });
 
-});
+if(results.innerHTML===""){
+results.innerHTML="<h3>No user found.</h3>";
+}
 
 });
+
+}
