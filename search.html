@@ -1,10 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Coming Soon</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search Users | 14 July</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<h1>Coming Soon 🚀</h1>
-<a href="dashboard.html">⬅ Back to Dashboard</a>
+
+<header class="navbar">
+<div class="logo">🎂 14 July</div>
+
+<nav>
+<a href="dashboard.html">🏠 Home</a>
+<a href="profile.html">👤 Profile</a>
+<a href="wishes.html">💌 Send Wish</a>
+<a href="inbox.html">📥 Inbox</a>
+</nav>
+</header>
+
+<div class="container">
+
+<div class="welcome">
+<h2>🔍 Search Users</h2>
+<p>Search by username or User ID.</p>
+</div>
+
+<input
+type="text"
+id="searchInput"
+placeholder="Search @username or User ID">
+
+<br><br>
+
+<div id="results"></div>
+
+</div>
+
+<script type="module" src="search.js"></script>
+
 </body>
 </html>
